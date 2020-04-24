@@ -12,6 +12,8 @@ public class AntiPatternTesting {
     private static Aluguer _aluguer;
     private static Venda _venda;
 
+    //MotherHen
+    //GenerousLeftover
     @BeforeAll
     static void initialize(){
         _standAutomoveis = StandAutomoveis.getInstance();
@@ -21,30 +23,38 @@ public class AntiPatternTesting {
         _venda = new Venda(_carro, LocalDate.now(), _carro.getPreco(), _cliente);
     }
 
+    //Test-per-Method
+    //Dodger
     @Test
     public void testClienteSetNome(){
         _cliente.setNome("Siul");
         assertEquals("Siul", _cliente.getNome());
     }
 
+    //Test-per-Method
+    //Happy-Path
     @Test
     public void testClienteSetIdade(){
         _cliente.setIdade(93);
         assertEquals(93, _cliente.getIdade());
     }
 
+    //Test-per-Method
     @Test
     public void testClienteSetMorada(){
         _cliente.setMorada("Lisboa");
         assertEquals("Lisboa", _cliente.getMorada());
     }
 
+    //Test-per-Method
     @Test
     public void testClienteSetTipoCarta(){
         _cliente.setTipoCarta("ligeiros");
         assertEquals("ligeiros", _cliente.getTipoCarta());
     }
 
+    //Enumerator
+    //FreeRide
     @Test
     public void test1(){
         Carro carro = new Carro(2000, "12-SG-93", "Fiat", "Punto", null, 10000);
@@ -54,6 +64,8 @@ public class AntiPatternTesting {
         assertEquals(cliente, carro.getDono());
     }
 
+    //NitPicker
+    //Loudmouth?
     @Test
     public void testAluguerGetCusto(){
         Cliente cliente = new Cliente("Francisco", 48, "pesados", "Aveiro");
@@ -77,6 +89,7 @@ public class AntiPatternTesting {
         assertEquals(300, aluguer.getCustoMensal());
     }
 
+    //FreeRide
     @Test
     public void testStandAlugarVeiculo(){
         assertDoesNotThrow(() -> {
