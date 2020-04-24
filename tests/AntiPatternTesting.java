@@ -12,6 +12,7 @@ public class AntiPatternTesting {
     private static Aluguer _aluguer;
     private static Venda _venda;
 
+    //MotherHen
     //GenerousLeftover
     @BeforeAll
     static void initialize(){
@@ -23,6 +24,7 @@ public class AntiPatternTesting {
     }
 
     //Test-per-Method
+    //Dodger
     @Test
     public void testClienteSetNome(){
         _cliente.setNome("Siul");
