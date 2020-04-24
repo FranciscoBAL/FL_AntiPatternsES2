@@ -12,6 +12,7 @@ public class AntiPatternTesting {
     private static Aluguer _aluguer;
     private static Venda _venda;
 
+    //GenerousLeftover
     @BeforeAll
     static void initialize(){
         _standAutomoveis = StandAutomoveis.getInstance();
@@ -21,7 +22,6 @@ public class AntiPatternTesting {
         _venda = new Venda(_carro, LocalDate.now(), _carro.getPreco(), _cliente);
     }
 
-    //Cuckoo 1
     //Test-per-Method
     @Test
     public void testClienteSetNome(){
@@ -29,7 +29,6 @@ public class AntiPatternTesting {
         assertEquals("Siul", _cliente.getNome());
     }
 
-    //Cuckoo 2
     //Test-per-Method
     //Happy-Path
     @Test
@@ -38,7 +37,6 @@ public class AntiPatternTesting {
         assertEquals(93, _cliente.getIdade());
     }
 
-    //Cuckoo 3
     //Test-per-Method
     @Test
     public void testClienteSetMorada(){
@@ -46,7 +44,6 @@ public class AntiPatternTesting {
         assertEquals("Lisboa", _cliente.getMorada());
     }
 
-    //Cuckoo 4
     //Test-per-Method
     @Test
     public void testClienteSetTipoCarta(){
@@ -55,6 +52,7 @@ public class AntiPatternTesting {
     }
 
     //Enumerator
+    //FreeRide
     @Test
     public void test1(){
         Carro carro = new Carro(2000, "12-SG-93", "Fiat", "Punto", null, 10000);
@@ -89,6 +87,7 @@ public class AntiPatternTesting {
         assertEquals(300, aluguer.getCustoMensal());
     }
 
+    //FreeRide
     @Test
     public void testStandAlugarVeiculo(){
         assertDoesNotThrow(() -> {
