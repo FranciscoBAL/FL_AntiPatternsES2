@@ -21,30 +21,40 @@ public class AntiPatternTesting {
         _venda = new Venda(_carro, LocalDate.now(), _carro.getPreco(), _cliente);
     }
 
+    //Cuckoo 1
+    //Test-per-Method
     @Test
     public void testClienteSetNome(){
         _cliente.setNome("Siul");
         assertEquals("Siul", _cliente.getNome());
     }
 
+    //Cuckoo 2
+    //Test-per-Method
+    //Happy-Path
     @Test
     public void testClienteSetIdade(){
         _cliente.setIdade(93);
         assertEquals(93, _cliente.getIdade());
     }
 
+    //Cuckoo 3
+    //Test-per-Method
     @Test
     public void testClienteSetMorada(){
         _cliente.setMorada("Lisboa");
         assertEquals("Lisboa", _cliente.getMorada());
     }
 
+    //Cuckoo 4
+    //Test-per-Method
     @Test
     public void testClienteSetTipoCarta(){
         _cliente.setTipoCarta("ligeiros");
         assertEquals("ligeiros", _cliente.getTipoCarta());
     }
 
+    //Enumerator
     @Test
     public void test1(){
         Carro carro = new Carro(2000, "12-SG-93", "Fiat", "Punto", null, 10000);
@@ -54,6 +64,8 @@ public class AntiPatternTesting {
         assertEquals(cliente, carro.getDono());
     }
 
+    //NitPicker
+    //Loudmouth?
     @Test
     public void testAluguerGetCusto(){
         Cliente cliente = new Cliente("Francisco", 48, "pesados", "Aveiro");
